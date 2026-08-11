@@ -48,6 +48,45 @@ function ShowcaseCmmMockup() {
   );
 }
 
+function ShowcaseAndroidMockup() {
+  return (
+    <svg viewBox="0 0 320 180" fill="none" className="w-full h-full" aria-hidden>
+      <rect width="320" height="180" fill="#0d1912" />
+      <rect width="320" height="26" fill="#123a26" />
+      <circle cx="18" cy="13" r="6" fill="#3ddc84" opacity="0.9" />
+      <rect x="32" y="10" width="70" height="6" rx="3" fill="#8be6b0" opacity="0.7" />
+      {/* Phone frame */}
+      <rect x="112" y="40" width="96" height="128" rx="14" fill="#123a26" />
+      <rect x="124" y="52" width="72" height="18" rx="4" fill="#3ddc84" opacity="0.3" />
+      <rect x="124" y="76" width="72" height="30" rx="4" fill="#3ddc84" opacity="0.2" />
+      {/* Bottom nav */}
+      <rect x="112" y="140" width="96" height="28" rx="0" fill="#0a2a1b" />
+      <circle cx="146" cy="154" r="4" fill="#3ddc84" />
+      <circle cx="174" cy="154" r="4" fill="#3ddc84" opacity="0.4" />
+      <text x="160" y="30" textAnchor="middle" fontSize="7" fill="#3ddc84" fontFamily="monospace" opacity="0.7">
+        Jetpack Compose
+      </text>
+    </svg>
+  );
+}
+
+function ShowcaseIosMockup() {
+  return (
+    <svg viewBox="0 0 320 180" fill="none" className="w-full h-full" aria-hidden>
+      <rect width="320" height="180" fill="#0a0a0a" />
+      <rect x="112" y="40" width="96" height="128" rx="20" fill="#1f1f1f" />
+      <rect x="124" y="52" width="72" height="18" rx="4" fill="#007aff" opacity="0.3" />
+      <rect x="124" y="76" width="72" height="30" rx="4" fill="#007aff" opacity="0.2" />
+      <rect x="112" y="140" width="96" height="28" rx="0" fill="#141414" />
+      <circle cx="146" cy="154" r="4" fill="#007aff" />
+      <circle cx="174" cy="154" r="4" fill="#007aff" opacity="0.4" />
+      <text x="160" y="30" textAnchor="middle" fontSize="7" fill="#007aff" fontFamily="monospace" opacity="0.7">
+        SwiftUI
+      </text>
+    </svg>
+  );
+}
+
 function ShowcaseNextjsMockup() {
   return (
     <svg viewBox="0 0 320 180" fill="none" className="w-full h-full" aria-hidden>
@@ -197,6 +236,24 @@ const PORTFOLIO: PortfolioItem[] = [
     accent: "from-[#3ddc84]/15 to-[#0a0a0a]/10",
   },
   {
+    id: "showcase-android",
+    title: "Showcase.Android",
+    subtitle: "Native Kotlin, Jetpack Compose showcase app — MVVM, Clean Architecture, Koin DI.",
+    tags: ["Kotlin", "Jetpack Compose", "MVVM"],
+    href: "https://github.com/Artificialss/Showcase.Android",
+    Mockup: ShowcaseAndroidMockup,
+    accent: "from-[#3ddc84]/20 to-[#0d1912]/10",
+  },
+  {
+    id: "showcase-ios",
+    title: "Showcase.iOS",
+    subtitle: "Native SwiftUI showcase app — MVVM, Clean Architecture, the modern @Observable pattern.",
+    tags: ["Swift", "SwiftUI", "MVVM"],
+    href: "https://github.com/Artificialss/Showcase.iOS",
+    Mockup: ShowcaseIosMockup,
+    accent: "from-[#007aff]/20 to-[#0a0a0a]/10",
+  },
+  {
     id: "papasar",
     title: "Papasar",
     subtitle: "AI-powered study platform helping students prepare for exams with adaptive question sets.",
@@ -267,7 +324,7 @@ export function PortfolioSection() {
             A few of the products we&apos;ve shipped — including the public showcase repos this page is part of.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PORTFOLIO.map((item) => (
             <PortfolioCard key={item.id} item={item} />
           ))}
