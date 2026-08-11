@@ -8,12 +8,23 @@ site without carrying over any of its business logic, multi-page content, or bac
 
 This is a public reference build: browse the code, clone it, and run it locally to see the patterns in action.
 
+## Screenshots
+
+**Hero**
+
+![Hero section](docs/screenshots/hero-section.png)
+
+**Portfolio**
+
+![Portfolio section](docs/screenshots/portfolio-section.png)
+
 ## What's in here
 
-A single home page with three pieces, all reused/adapted from the production site's real design:
+A single home page with four pieces, all reused/adapted from the production site's real design:
 
 - **Header** — sticky, dark, curved bottom border that arcs around the logo, contact mailto link, light/dark toggle
-- **Hero** — animated planet-and-spaceship logo, headline, subtitle, CTA button
+- **Hero** — animated "Powered by AI" wooden sign logo, headline, subtitle, CTA button
+- **Portfolio** — a card grid linking out to real projects: this repo, [Showcase.CMM](https://github.com/Artificialss/Showcase.CMM), [Papasar](https://papasar.cr), and [artificialss.ai](https://artificialss.ai)
 - **Footer** — logo, public social links, copyright
 
 ## What's deliberately left out
@@ -43,8 +54,8 @@ controls.
 ## Brand Identity
 
 The color palette, fonts (Inter + Space Grotesk via `next/font/google`), border radius, and the animated
-SVG logo (a planet orbited by a small spaceship, built with SMIL `animateMotion`) are ported directly from the
-real site's design tokens — same look, zero backend.
+SVG logo (a swinging wooden "Powered by AI" sign, built with layered CSS keyframes) are ported directly from
+the real site's design tokens — same look, zero backend.
 
 ## Project Structure
 
@@ -52,17 +63,18 @@ real site's design tokens — same look, zero backend.
 src/
 ├── app/
 │   ├── layout.tsx      # Fonts, ThemeProvider, Header/Footer shell, metadata
-│   ├── page.tsx         # Renders HeroSection
+│   ├── page.tsx         # Renders HeroSection + PortfolioSection
 │   └── globals.css      # Brand color tokens (light/dark), Tailwind v4 @theme
 ├── components/
 │   ├── layout/
 │   │   ├── header.tsx
 │   │   └── footer.tsx
 │   ├── sections/
-│   │   └── hero-section.tsx
+│   │   ├── hero-section.tsx
+│   │   └── portfolio-section.tsx   # Card grid with illustrated per-project SVG mockups
 │   ├── ui/
 │   │   ├── button.tsx        # Minimal Button/ButtonLink, no external UI library
-│   │   ├── logo.tsx           # Animated SVG logo
+│   │   ├── logo.tsx           # Animated SVG logo ("Powered by AI" sign)
 │   │   └── social-icons.tsx   # Inline brand SVGs (GitHub/X/LinkedIn/YouTube)
 │   ├── theme-provider.tsx
 │   └── theme-toggle.tsx
