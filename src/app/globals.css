@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* next-themes toggles a `.dark` class on <html> — opt in to class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Background: warm cream derived from the logo brown, very light */
+  --background: 26 40% 94%;
+  --foreground: 21 18% 22%;
+  --card: 0 0% 100%;
+  --card-foreground: 21 18% 22%;
+  --primary: 158 41% 35%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 305 42% 36%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 26 28% 88%;
+  --muted-foreground: 21 13% 52%;
+  --accent: 20 94% 52%;
+  --accent-foreground: 0 0% 10%;
+  --border: 26 22% 82%;
+  --input: 26 22% 82%;
+  --ring: 20 94% 52%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 27 13% 10%;
+  --foreground: 210 40% 98%;
+  --card: 27 13% 15%;
+  --card-foreground: 210 40% 98%;
+  --primary: 158 41% 45%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 305 24% 30%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 305 24% 20%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 20 94% 60%;
+  --accent-foreground: 21 13% 10%;
+  --border: 27 13% 20%;
+  --input: 27 13% 20%;
+  --ring: 20 94% 60%;
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --font-sans: var(--font-inter);
+  --font-headline: var(--font-space-grotesk);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+
+@keyframes ping-soft {
+  0%,
+  100% {
+    box-shadow: 0 0 2px 1px #ff220055, 0 0 4px 1px #ff220022;
+  }
+  50% {
+    box-shadow: 0 0 4px 2px #ff220077, 0 0 8px 3px #ff220033;
+  }
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), sans-serif;
+}
